@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Main application
+Allow: /mnssby/
+Allow: /mnssby/index.html
+Allow: /mnssby/seo.html
+Allow: /mnssby/README.md
+Allow: /mnssby/manifest.json
+Allow: /mnssby/image.png
+
+# API endpoints (allow but with caution)
+Allow: /mnssby/api.php
+
+# Service worker
+Allow: /mnssby/sw.js
+
+# Disallow sensitive files
+Disallow: /mnssby/cookie.txt
+Disallow: /mnssby/*.log
+Disallow: /mnssby/*.tmp
+Disallow: /mnssby/*.bak
+
+# Sitemap
+Sitemap: https://deepanik.me/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
+
+# Additional directives
+# Educational purpose only - please index responsibly
+# No malicious intent - designed for learning purposes

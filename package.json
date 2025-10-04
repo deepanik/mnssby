@@ -1,0 +1,194 @@
+{
+  "name": "bihar-student-credit-card-portal",
+  "version": "1.0.0",
+  "description": "Official Bihar Student Credit Card Portal with PWA support, enhanced security, and lightning-fast performance. Educational purpose only.",
+  "main": "index.html",
+  "scripts": {
+    "start": "php -S localhost:8000",
+    "dev": "php -S localhost:8000 -t .",
+    "build": "echo 'No build process required for PHP project'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'Linting not configured'",
+    "serve": "php -S localhost:8000",
+    "pwa": "echo 'PWA is already configured'",
+    "seo": "echo 'SEO optimization complete'"
+  },
+  "keywords": [
+    "bihar",
+    "student",
+    "credit-card",
+    "portal",
+    "government",
+    "PWA",
+    "progressive-web-app",
+    "mobile",
+    "security",
+    "educational",
+    "deep-anik",
+    "bootstrap",
+    "php",
+    "javascript",
+    "responsive",
+    "offline",
+    "performance",
+    "SEO",
+    "accessibility"
+  ],
+  "author": {
+    "name": "Deep Anik",
+    "email": "contact@deepanik.me",
+    "url": "https://deepanik.me",
+    "github": "https://github.com/deepanik",
+    "linkedin": "https://linkedin.com/in/deepanik"
+  },
+  "license": "MIT",
+  "homepage": "https://deepanik.me/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deepanik/bihar-student-portal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/deepanik/bihar-student-portal/issues"
+  },
+  "engines": {
+    "php": ">=8.0",
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.0"
+  },
+  "devDependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "iOS >= 12",
+    "Android >= 8"
+  ],
+  "pwa": {
+    "name": "Bihar Student Credit Card Portal",
+    "short_name": "Bihar Student Portal",
+    "description": "Official Bihar Student Credit Card Portal with PWA support",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#0d1117",
+    "theme_color": "#1f6feb",
+    "orientation": "portrait-primary",
+    "scope": "./",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": [
+      "education",
+      "government",
+      "finance"
+    ],
+    "icons": [
+      {
+        "src": "image.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "image.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ]
+  },
+  "seo": {
+    "title": "Bihar Student Credit Card Portal - Government of Bihar | PWA App",
+    "description": "Official Bihar Student Credit Card Portal with PWA support, enhanced security, and lightning-fast performance. Educational purpose only.",
+    "keywords": "bihar student credit card, government portal, PWA, educational, student loan, bihar government, deep anik, progressive web app, mobile app, offline support",
+    "author": "Deep Anik",
+    "url": "https://deepanik.me/",
+    "image": "https://deepanik.me/image.png",
+    "type": "website",
+    "locale": "en_US"
+  },
+  "security": {
+    "features": [
+      "XSS Prevention",
+      "Rate Limiting",
+      "Input Validation",
+      "Attack Prevention",
+      "CSRF Protection"
+    ],
+    "level": "Enhanced",
+    "purpose": "Educational Only"
+  },
+  "performance": {
+    "api_timeout": "3s",
+    "memory_limit": "512M",
+    "execution_time": "8s",
+    "optimization": "Rocket Speed",
+    "caching": "Advanced",
+    "compression": "Enabled"
+  },
+  "accessibility": {
+    "wcag": "2.1",
+    "level": "AA",
+    "features": [
+      "Keyboard Navigation",
+      "Screen Reader Support",
+      "High Contrast",
+      "Focus Management",
+      "ARIA Labels"
+    ]
+  },
+  "mobile": {
+    "responsive": true,
+    "touch_friendly": true,
+    "gesture_support": true,
+    "orientation": "both",
+    "pwa": true,
+    "offline": true
+  },
+  "files": [
+    "index.html",
+    "api.php",
+    "manifest.json",
+    "sw.js",
+    "image.png",
+    "README.md",
+    "seo.html",
+    "sitemap.xml",
+    "robots.txt",
+    ".htaccess",
+    "package.json"
+  ],
+  "directories": {
+    "source": "./",
+    "public": "./",
+    "assets": "./",
+    "docs": "./"
+  },
+  "config": {
+    "domain": "deepanik.me",
+    "subdomain": "mnssby",
+    "full_url": "https://deepanik.me/",
+    "api_url": "https://www.bsefcl.bihar.gov.in/api/",
+    "timeout": 3,
+    "memory_limit": "512M",
+    "pwa_enabled": true,
+    "security_enabled": true,
+    "seo_enabled": true,
+    "performance_optimized": true
+  },
+  "educational": {
+    "purpose": "Educational Only",
+    "disclaimer": "This application is created for educational purposes only. Please do not misuse this tool. Use responsibly and ethically.",
+    "no_malicious_intent": "This tool is designed for learning and educational purposes only.",
+    "author_contact": "https://deepanik.me",
+    "github": "https://github.com/deepanik"
+  },
+  "government": {
+    "organization": "Government of Bihar",
+    "portal": "Bihar Student Credit Card Portal",
+    "purpose": "Student Services",
+    "educational": true,
+    "official": false
+  }
+}

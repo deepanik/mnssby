@@ -509,7 +509,7 @@ This project is created for **educational purposes only**. It demonstrates advan
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Deep%20Anik-FF6B6B?style=for-the-badge&logo=portfolio&logoColor=white)](https://deepanik.me)
 [![GitHub](https://img.shields.io/badge/GitHub-Deep%20Anik-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/deepanik)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Deep%20Anik-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/deepanik)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Deep%20Anik-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/laxmi-narayan-pandey/)
 
 **© 2024 Government of Bihar. All rights reserved.**
 

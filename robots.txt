@@ -2,24 +2,24 @@ User-agent: *
 Allow: /
 
 # Main application
-Allow: /mnssby/
-Allow: /mnssby/index.html
-Allow: /mnssby/seo.html
-Allow: /mnssby/README.md
-Allow: /mnssby/manifest.json
-Allow: /mnssby/image.png
+Allow: 
+Allow: index.html
+Allow: seo.html
+Allow: README.md
+Allow: manifest.json
+Allow: image.png
 
 # API endpoints (allow but with caution)
-Allow: /mnssby/api.php
+Allow: api.php
 
 # Service worker
-Allow: /mnssby/sw.js
+Allow: sw.js
 
 # Disallow sensitive files
-Disallow: /mnssby/cookie.txt
-Disallow: /mnssby/*.log
-Disallow: /mnssby/*.tmp
-Disallow: /mnssby/*.bak
+Disallow: cookie.txt
+Disallow: *.log
+Disallow: *.tmp
+Disallow: *.bak
 
 # Sitemap
 Sitemap: https://deepanik.me/sitemap.xml

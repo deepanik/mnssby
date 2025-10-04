@@ -107,8 +107,8 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
 # Error Pages
-ErrorDocument 404 /mnssby/index.html
-ErrorDocument 500 /mnssby/index.html
+ErrorDocument 404 index.html
+ErrorDocument 500 index.html
 
 # Prevent access to sensitive files
 <Files "cookie.txt">

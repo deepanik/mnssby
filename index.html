@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bihar Student Credit Card - Government Portal</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="description" content="Bihar Student Credit Card Portal - Government of Bihar">
+    <meta name="application-name" content="Bihar Student Portal">
+    <meta name="apple-mobile-web-app-title" content="Bihar Student Portal">
+    <meta name="msapplication-TileColor" content="#0d1117">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="apple-touch-icon" href="image.png">
+    <link rel="icon" type="image/png" href="image.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Bootstrap 5.3.0 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --github-bg: #0d1117;
+            --github-border: #30363d;
+            --github-text: #f0f6fc;
+            --github-muted: #8b949e;
+            --github-accent: #1f6feb;
+            --github-success: #238636;
+            --github-warning: #d29922;
+            --github-danger: #da3633;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--github-bg);
+            color: var(--github-text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .github-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .github-scrollable {
+            max-height: 80vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 8px;
+        }
+
+        .github-scrollable::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .github-scrollable::-webkit-scrollbar-track {
+            background: var(--github-bg);
+            border-radius: 4px;
+        }
+
+        .github-scrollable::-webkit-scrollbar-thumb {
+            background: var(--github-border);
+            border-radius: 4px;
+        }
+
+        .github-scrollable::-webkit-scrollbar-thumb:hover {
+            background: var(--github-accent);
+        }
+
+        .github-header {
+            background: var(--github-bg);
+            border-bottom: 1px solid var(--github-border);
+            padding: 16px 0;
+            margin-bottom: 32px;
+        }
+
+        .github-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .github-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--github-text);
+        }
+
+        .github-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+        }
+
+        .github-logo h1 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .github-card {
+            background: #161b22;
+            border: 1px solid var(--github-border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+            transition: all 0.2s ease;
+        }
+
+        .github-card:hover {
+            border-color: var(--github-accent);
+            box-shadow: 0 4px 12px rgba(31, 111, 235, 0.15);
+        }
+
+        .github-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--github-border);
+        }
+
+        .github-card-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--github-text);
+        }
+
+        .github-form-group {
+            margin-bottom: 20px;
+        }
+
+        .github-form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--github-text);
+            margin-bottom: 8px;
+        }
+
+        .github-form-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--github-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 8px;
+            color: var(--github-text);
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .github-form-control:focus {
+            outline: none;
+            border-color: var(--github-accent);
+            box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.1);
+        }
+
+        .github-form-control::placeholder {
+            color: var(--github-muted);
+        }
+
+        .github-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .github-checkbox input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--github-accent);
+        }
+
+        .github-checkbox label {
+            font-size: 14px;
+            color: var(--github-text);
+            cursor: pointer;
+        }
+
+        .github-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--github-accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .github-btn:hover {
+            background: #1c5bb8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(31, 111, 235, 0.3);
+        }
+
+        .github-btn:active {
+            transform: translateY(0);
+        }
+
+        .github-btn:disabled {
+            background: var(--github-muted);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .github-alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+            border: 1px solid;
+        }
+
+        .github-alert-success {
+            background: rgba(35, 134, 54, 0.1);
+            border-color: var(--github-success);
+            color: #7ee787;
+        }
+
+        .github-alert-danger {
+            background: rgba(218, 54, 51, 0.1);
+            border-color: var(--github-danger);
+            color: #ff7b72;
+        }
+
+        .github-alert-warning {
+            background: rgba(210, 153, 34, 0.1);
+            border-color: var(--github-warning);
+            color: #f0c674;
+        }
+
+        .github-alert-info {
+            background: rgba(31, 111, 235, 0.1);
+            border-color: var(--github-accent);
+            color: #79c0ff;
+        }
+
+        .github-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .github-table th,
+        .github-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--github-border);
+        }
+
+        .github-table th {
+            background: #21262d;
+            font-weight: 600;
+            color: var(--github-text);
+        }
+
+        .github-table td {
+            color: var(--github-muted);
+        }
+
+        .github-table tr:hover {
+            background: rgba(31, 111, 235, 0.05);
+        }
+
+        .github-loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .github-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--github-border);
+            border-top: 2px solid var(--github-accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 12px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .github-footer {
+            text-align: center;
+            padding: 32px 0;
+            border-top: 1px solid var(--github-border);
+            margin-top: 48px;
+            color: var(--github-muted);
+        }
+
+        .github-footer a {
+            color: var(--github-accent);
+            text-decoration: none;
+        }
+
+        .github-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .github-container {
+                padding: 16px;
+            }
+
+            .github-header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .github-card {
+                padding: 20px;
+            }
+
+            .github-table {
+                font-size: 14px;
+            }
+
+            .github-table th,
+            .github-table td {
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .github-container {
+                padding: 12px;
+            }
+
+            .github-card {
+                padding: 16px;
+            }
+
+            .github-logo h1 {
+                font-size: 18px;
+            }
+        }
+
+        /* Auto-login styles */
+        .auto-login-notice {
+            background: rgba(31, 111, 235, 0.1);
+            border: 1px solid var(--github-accent);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            color: #79c0ff;
+            font-size: 14px;
+        }
+
+        .auto-login-notice i {
+            margin-right: 8px;
+        }
+
+        .security-warning {
+            background: rgba(210, 153, 34, 0.1);
+            border: 1px solid var(--github-warning);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 20px 0;
+            color: #f0c674;
+            text-align: center;
+        }
+
+        .security-warning h4 {
+            color: var(--github-warning);
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .security-warning p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .attack-prevention {
+            background: rgba(218, 54, 51, 0.1);
+            border: 1px solid var(--github-danger);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 16px 0;
+            color: #ff7b72;
+            font-size: 13px;
+        }
+
+        .attack-prevention i {
+            margin-right: 8px;
+        }
+
+        .auto-fill-notice {
+            background: rgba(35, 134, 54, 0.1);
+            border: 1px solid var(--github-success);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 16px 0;
+            color: #7ee787;
+            font-size: 14px;
+        }
+
+        .auto-fill-notice i {
+            margin-right: 8px;
+        }
+
+        /* Mandatory PWA Installation Styles */
+        .pwa-install-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .pwa-install-content {
+            background: var(--github-bg);
+            border: 2px solid var(--github-accent);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .pwa-install-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: var(--github-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+        }
+
+        .pwa-install-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--github-text);
+            margin-bottom: 16px;
+        }
+
+        .pwa-install-description {
+            color: var(--github-muted);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .pwa-install-benefits {
+            background: rgba(31, 111, 235, 0.1);
+            border: 1px solid var(--github-accent);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .pwa-install-benefits h4 {
+            color: var(--github-accent);
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .pwa-install-benefits ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--github-muted);
+        }
+
+        .pwa-install-benefits li {
+            margin-bottom: 8px;
+        }
+
+        .pwa-install-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pwa-install-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 140px;
+            justify-content: center;
+        }
+
+        .pwa-install-btn-primary {
+            background: var(--github-accent);
+            color: white;
+        }
+
+        .pwa-install-btn-primary:hover {
+            background: #1c5bb8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(31, 111, 235, 0.3);
+        }
+
+        .pwa-install-btn-secondary {
+            background: transparent;
+            color: var(--github-muted);
+            border: 1px solid var(--github-border);
+        }
+
+        .pwa-install-btn-secondary:hover {
+            background: var(--github-border);
+            color: var(--github-text);
+        }
+
+        .pwa-install-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .pwa-install-warning {
+            background: rgba(210, 153, 34, 0.1);
+            border: 1px solid var(--github-warning);
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 16px;
+            color: #f0c674;
+            font-size: 14px;
+        }
+
+        .pwa-install-warning i {
+            margin-right: 8px;
+        }
+
+        /* Hide content when PWA is not installed */
+        .content-disabled {
+            pointer-events: none;
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+
+        /* PWA Status Indicator */
+        .pwa-status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--github-success);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1000;
+            display: none;
+        }
+
+        .pwa-status.installed {
+            display: block;
+        }
+
+        /* Mobile PWA Installation Styles */
+        @media (max-width: 768px) {
+            .pwa-install-content {
+                padding: 24px;
+                margin: 20px;
+            }
+            
+            .pwa-install-title {
+                font-size: 20px;
+            }
+            
+            .pwa-install-buttons {
+                flex-direction: column;
+            }
+            
+            .pwa-install-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="github-header">
+        <div class="container">
+            <a href="#" class="github-logo">
+                <img src="image.png" alt="Bihar Government">
+                <h1>Bihar Student Credit Card</h1>
+            </a>
+            <div>
+                <span style="color: var(--github-muted); font-size: 14px;">Government of Bihar</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- PWA Status Indicator -->
+    <div class="pwa-status" id="pwaStatus">
+        <i class="bi bi-check-circle"></i> App Installed
+    </div>
+
+    <!-- Mandatory PWA Installation Modal -->
+    <div class="pwa-install-modal" id="pwaInstallModal">
+        <div class="pwa-install-content">
+            <div class="pwa-install-icon">
+                <i class="bi bi-download"></i>
+            </div>
+            <h2 class="pwa-install-title">Install Bihar Student Portal</h2>
+            <p class="pwa-install-description">
+                This application requires installation to access all features. 
+                Install the app for the best experience with offline access and enhanced security.
+            </p>
+            
+            <div class="pwa-install-benefits">
+                <h4><i class="bi bi-star"></i> App Benefits</h4>
+                <ul>
+                    <li><i class="bi bi-shield-check"></i> Enhanced security and privacy</li>
+                    <li><i class="bi bi-wifi-off"></i> Works offline after first visit</li>
+                    <li><i class="bi bi-lightning"></i> Faster loading and performance</li>
+                    <li><i class="bi bi-phone"></i> Native app-like experience</li>
+                    <li><i class="bi bi-bell"></i> Push notifications support</li>
+                </ul>
+            </div>
+            
+            <div class="pwa-install-buttons">
+                <button class="pwa-install-btn pwa-install-btn-primary" id="installAppBtn">
+                    <i class="bi bi-download"></i>
+                    Install App
+                </button>
+                <button class="pwa-install-btn pwa-install-btn-secondary" id="showInstructionsBtn">
+                    <i class="bi bi-question-circle"></i>
+                    How to Install
+                </button>
+            </div>
+            
+            <div class="pwa-install-warning">
+                <i class="bi bi-exclamation-triangle"></i>
+                <strong>Required:</strong> This app must be installed to continue. No browser access available.
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="github-container" id="mainContainer">
+        <!-- Security Warning -->
+        <div class="security-warning">
+            <h4><i class="bi bi-shield-exclamation"></i> Educational Purpose Only</h4>
+            <p><strong>⚠️ WARNING:</strong> This application is created for educational purposes only.</p>
+            <p>Please do not misuse this tool. Use responsibly and ethically.</p>
+        </div>
+
+        <!-- Attack Prevention Notice -->
+        <div class="attack-prevention">
+            <i class="bi bi-shield-check"></i>
+            <strong>Security Notice:</strong> This tool includes built-in security measures to prevent misuse and protect against unauthorized access.
+        </div>
+
+        <!-- Auto-login Notice -->
+        <div id="autoLoginNotice" class="auto-login-notice" style="display: none;">
+            <i class="bi bi-info-circle"></i>
+            <span>Auto-login enabled. Logging in with saved credentials...</span>
+        </div>
+
+        <!-- Auto-fill Notice -->
+        <div id="autoFillNotice" class="auto-fill-notice" style="display: none;">
+            <i class="bi bi-check-circle"></i>
+            <span>Credentials auto-filled from saved data. You can proceed to login.</span>
+        </div>
+
+        <!-- Login Form -->
+        <div class="github-card" id="loginCard">
+            <div class="github-card-header">
+                <i class="bi bi-shield-lock" style="color: var(--github-accent);"></i>
+                <h3>Student Portal Login</h3>
+            </div>
+            
+            <form id="loginForm">
+                <div class="github-form-group">
+                    <label for="email" class="github-form-label">
+                        <i class="bi bi-envelope me-2"></i>Email Address
+                    </label>
+                    <input type="email" id="email" class="github-form-control" placeholder="Enter your email address" required>
+                </div>
+                
+                <div class="github-form-group">
+                    <label for="password" class="github-form-label">
+                        <i class="bi bi-lock me-2"></i>Password
+                    </label>
+                    <input type="password" id="password" class="github-form-control" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="github-checkbox">
+                    <input type="checkbox" id="rememberMe" checked>
+                    <label for="rememberMe">Remember me for faster login</label>
+                </div>
+                
+                <button type="submit" class="github-btn" id="loginBtn">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Login to Portal</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Loading State -->
+        <div class="github-loading" id="loadingState">
+            <div class="github-spinner"></div>
+            <p>Processing your request...</p>
+        </div>
+
+        <!-- Results Container -->
+        <div id="resultsContainer" class="github-scrollable"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="github-footer">
+        <div class="container">
+            <div class="security-warning" style="margin: 0 0 20px 0;">
+                <h4><i class="bi bi-exclamation-triangle"></i> Educational Purpose Only</h4>
+                <p><strong>⚠️ IMPORTANT:</strong> This application is created for educational purposes only.</p>
+                <p>Please do not misuse this tool. Use responsibly and ethically.</p>
+                <p><strong>No malicious intent:</strong> This tool is designed for learning and educational purposes only.</p>
+            </div>
+            <p>&copy; 2024 Government of Bihar. All rights reserved.</p>
+            <p>
+                Made with ❤️ by <a href="https://deepanik.com" target="_blank">Deep Anik</a> | 
+                <a href="https://github.com/deepanik" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // PWA Installation and Management
+        let deferredPrompt;
+        let isAppInstalled = false;
+        let isStandalone = false;
+
+        // Check if app is already installed
+        function checkAppInstallation() {
+            // Check if running in standalone mode
+            isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
+                          window.navigator.standalone === true;
+            
+            // Check if app is installed via other methods
+            if (localStorage.getItem('pwa_installed') === 'true') {
+                isAppInstalled = true;
+            }
+            
+            if (isStandalone || isAppInstalled) {
+                hideInstallModal();
+                showPWAStatus();
+                enableAppContent();
+            } else {
+                showInstallModal();
+                disableAppContent();
+            }
+        }
+
+        // Show installation modal
+        function showInstallModal() {
+            document.getElementById('pwaInstallModal').style.display = 'flex';
+            document.getElementById('mainContainer').classList.add('content-disabled');
+        }
+
+        // Hide installation modal
+        function hideInstallModal() {
+            document.getElementById('pwaInstallModal').style.display = 'none';
+            document.getElementById('mainContainer').classList.remove('content-disabled');
+        }
+
+        // Disable app content
+        function disableAppContent() {
+            document.getElementById('mainContainer').classList.add('content-disabled');
+            document.getElementById('loginForm').style.pointerEvents = 'none';
+        }
+
+        // Enable app content
+        function enableAppContent() {
+            document.getElementById('mainContainer').classList.remove('content-disabled');
+            document.getElementById('loginForm').style.pointerEvents = 'auto';
+        }
+
+        // Show PWA status
+        function showPWAStatus() {
+            document.getElementById('pwaStatus').classList.add('installed');
+        }
+
+        // Install app function
+        async function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                
+                if (outcome === 'accepted') {
+                    console.log('PWA: User accepted installation');
+                    localStorage.setItem('pwa_installed', 'true');
+                    hideInstallModal();
+                    showPWAStatus();
+                    enableAppContent();
+                } else {
+                    console.log('PWA: User declined installation');
+                    showInstallInstructions();
+                }
+                
+                deferredPrompt = null;
+            } else {
+                showInstallInstructions();
+            }
+        }
+
+        // Show installation instructions
+        function showInstallInstructions() {
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            const isAndroid = /Android/.test(navigator.userAgent);
+            
+            let instructions = '';
+            
+            if (isIOS) {
+                instructions = `
+                    <div class="pwa-install-content">
+                        <h3><i class="bi bi-phone"></i> iOS Installation</h3>
+                        <ol style="text-align: left; color: var(--github-muted);">
+                            <li>Tap the <strong>Share</strong> button in Safari</li>
+                            <li>Scroll down and tap <strong>"Add to Home Screen"</strong></li>
+                            <li>Tap <strong>"Add"</strong> to install the app</li>
+                            <li>Open the app from your home screen</li>
+                        </ol>
+                        <button class="pwa-install-btn pwa-install-btn-primary" onclick="checkAppInstallation()">
+                            <i class="bi bi-check"></i> I've Installed It
+                        </button>
+                    </div>
+                `;
+            } else if (isAndroid) {
+                instructions = `
+                    <div class="pwa-install-content">
+                        <h3><i class="bi bi-phone"></i> Android Installation</h3>
+                        <ol style="text-align: left; color: var(--github-muted);">
+                            <li>Look for the <strong>"Install"</strong> banner or menu option</li>
+                            <li>Tap <strong>"Install"</strong> or <strong>"Add to Home Screen"</strong></li>
+                            <li>Confirm installation when prompted</li>
+                            <li>Open the app from your home screen</li>
+                        </ol>
+                        <button class="pwa-install-btn pwa-install-btn-primary" onclick="checkAppInstallation()">
+                            <i class="bi bi-check"></i> I've Installed It
+                        </button>
+                    </div>
+                `;
+            } else {
+                instructions = `
+                    <div class="pwa-install-content">
+                        <h3><i class="bi bi-laptop"></i> Desktop Installation</h3>
+                        <ol style="text-align: left; color: var(--github-muted);">
+                            <li>Look for the <strong>"Install"</strong> button in your browser</li>
+                            <li>Click <strong>"Install"</strong> when prompted</li>
+                            <li>The app will be added to your desktop</li>
+                            <li>Open the app from your desktop or start menu</li>
+                        </ol>
+                        <button class="pwa-install-btn pwa-install-btn-primary" onclick="checkAppInstallation()">
+                            <i class="bi bi-check"></i> I've Installed It
+                        </button>
+                    </div>
+                `;
+            }
+            
+            document.querySelector('.pwa-install-content').innerHTML = instructions;
+        }
+
+        // Service Worker Registration with better error handling
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('./sw.js', {
+                        scope: './'
+                    });
+                    console.log('Service Worker: Registered successfully', registration);
+                    
+                    // Handle service worker updates
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                // New content is available, reload the page
+                                if (confirm('New version available. Reload to update?')) {
+                                    window.location.reload();
+                                }
+                            }
+                        });
+                    });
+                } catch (error) {
+                    console.error('Service Worker: Registration failed', error);
+                    // Show error message to user
+                    showServiceWorkerError();
+                }
+            });
+        } else {
+            console.warn('Service Worker: Not supported in this browser');
+            showServiceWorkerError();
+        }
+
+        // Show service worker error
+        function showServiceWorkerError() {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'github-alert github-alert-warning';
+            errorDiv.innerHTML = `
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                <strong>Service Worker Error:</strong> Some features may not work properly. 
+                Please ensure you're using a modern browser and have a stable internet connection.
+            `;
+            document.getElementById('mainContainer').insertBefore(errorDiv, document.getElementById('mainContainer').firstChild);
+        }
+
+        // PWA Install Event Listeners
+        window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('PWA: Install prompt triggered');
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA: App installed successfully');
+            localStorage.setItem('pwa_installed', 'true');
+            hideInstallModal();
+            showPWAStatus();
+            enableAppContent();
+        });
+
+        // Check for app installation on page load
+        window.addEventListener('load', () => {
+            // Add a small delay to ensure everything is loaded
+            setTimeout(() => {
+                checkAppInstallation();
+            }, 1000);
+        });
+
+        // Handle PWA installation errors
+        window.addEventListener('error', (event) => {
+            if (event.error && event.error.message.includes('404')) {
+                console.error('PWA: 404 error detected, attempting fallback');
+                handlePWAError();
+            }
+        });
+
+        // Handle PWA errors
+        function handlePWAError() {
+            // Clear any cached data that might be causing issues
+            if ('caches' in window) {
+                caches.keys().then(cacheNames => {
+                    cacheNames.forEach(cacheName => {
+                        caches.delete(cacheName);
+                    });
+                });
+            }
+            
+            // Clear localStorage
+            localStorage.removeItem('pwa_installed');
+            
+            // Show error message
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'github-alert github-alert-danger';
+            errorDiv.innerHTML = `
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                <strong>PWA Installation Error:</strong> There was an issue with the app installation. 
+                Please try refreshing the page or clearing your browser cache.
+                <br><br>
+                <button class="github-btn" onclick="location.reload()" style="margin-top: 10px;">
+                    <i class="bi bi-arrow-clockwise"></i> Refresh Page
+                </button>
+            `;
+            document.getElementById('mainContainer').insertBefore(errorDiv, document.getElementById('mainContainer').firstChild);
+        }
+
+        // Install button event listener
+        document.getElementById('installAppBtn').addEventListener('click', installApp);
+        document.getElementById('showInstructionsBtn').addEventListener('click', showInstallInstructions);
+
+        // Enhanced Auto-login functionality with security
+        function loadSavedCredentials() {
+            const savedEmail = localStorage.getItem('bihar_student_email');
+            const savedPassword = localStorage.getItem('bihar_student_password');
+            const savedRememberMe = localStorage.getItem('bihar_student_remember') === 'true';
+            
+            if (savedEmail && savedRememberMe) {
+                document.getElementById('email').value = savedEmail;
+                document.getElementById('rememberMe').checked = true;
+                
+                // If password is also saved, auto-fill it
+                if (savedPassword) {
+                    document.getElementById('password').value = savedPassword;
+                    
+                    // Show auto-fill notice
+                    document.getElementById('autoFillNotice').style.display = 'block';
+                    
+                    // Auto-login after 2 seconds
+                    setTimeout(() => {
+                        document.getElementById('loginBtn').click();
+                    }, 2000);
+                } else {
+                    // Show auto-login notice for email only
+                    document.getElementById('autoLoginNotice').style.display = 'block';
+                }
+            }
+        }
+
+        // Security: Input validation and sanitization
+        function validateInput(email, password) {
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                throw new Error('Please enter a valid email address');
+            }
+            
+            // Password validation
+            if (password.length < 6) {
+                throw new Error('Password must be at least 6 characters long');
+            }
+            
+            // Prevent XSS attacks
+            const sanitizedEmail = email.replace(/[<>]/g, '');
+            const sanitizedPassword = password.replace(/[<>]/g, '');
+            
+            return { email: sanitizedEmail, password: sanitizedPassword };
+        }
+
+        // Security: Rate limiting
+        let loginAttempts = 0;
+        const maxAttempts = 5;
+        const lockoutTime = 300000; // 5 minutes
+
+        function checkRateLimit() {
+            const lastAttempt = localStorage.getItem('lastLoginAttempt');
+            const now = Date.now();
+            
+            if (lastAttempt && (now - parseInt(lastAttempt)) < lockoutTime) {
+                throw new Error('Too many login attempts. Please wait 5 minutes before trying again.');
+            }
+            
+            if (loginAttempts >= maxAttempts) {
+                throw new Error('Maximum login attempts exceeded. Please wait before trying again.');
+            }
+        }
+
+        // Enhanced save credentials with password option
+        function saveCredentials(email, password, rememberMe) {
+            if (rememberMe) {
+                localStorage.setItem('bihar_student_email', email);
+                localStorage.setItem('bihar_student_remember', 'true');
+                
+                // Ask user if they want to save password for auto-login
+                if (password && !localStorage.getItem('bihar_student_password')) {
+                    const savePassword = confirm('Do you want to save your password for automatic login? (More convenient but less secure)');
+                    if (savePassword) {
+                        localStorage.setItem('bihar_student_password', password);
+                    }
+                } else if (password) {
+                    localStorage.setItem('bihar_student_password', password);
+                }
+            } else {
+                localStorage.removeItem('bihar_student_email');
+                localStorage.removeItem('bihar_student_password');
+                localStorage.removeItem('bihar_student_remember');
+            }
+        }
+
+        // Clear saved data
+        function clearSavedData() {
+            localStorage.removeItem('bihar_student_email');
+            localStorage.removeItem('bihar_student_password');
+            localStorage.removeItem('bihar_student_remember');
+            localStorage.removeItem('lastLoginAttempt');
+            loginAttempts = 0;
+            location.reload();
+        }
+
+        // Enhanced form submission with security
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            try {
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const rememberMe = document.getElementById('rememberMe').checked;
+                
+                // Security checks
+                checkRateLimit();
+                const validated = validateInput(email, password);
+                
+                // Save credentials if remember me is checked
+                saveCredentials(validated.email, validated.password, rememberMe);
+                
+                // Update rate limiting
+                loginAttempts++;
+                localStorage.setItem('lastLoginAttempt', Date.now().toString());
+                
+                // Show loading state
+                document.getElementById('loginCard').style.display = 'none';
+                document.getElementById('loadingState').style.display = 'block';
+                
+                const response = await fetch(`api.php?lista=${encodeURIComponent(validated.email)}:${encodeURIComponent(validated.password)}`);
+                const result = await response.text();
+                
+                // Hide loading state
+                document.getElementById('loadingState').style.display = 'none';
+                
+                // Display results
+                document.getElementById('resultsContainer').innerHTML = result;
+                
+                // Show login form again
+                document.getElementById('loginCard').style.display = 'block';
+                
+                // Scroll to results
+                document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
+                
+                // Reset login attempts on successful login
+                loginAttempts = 0;
+                localStorage.removeItem('lastLoginAttempt');
+                
+            } catch (error) {
+                document.getElementById('loadingState').style.display = 'none';
+                document.getElementById('loginCard').style.display = 'block';
+                
+                document.getElementById('resultsContainer').innerHTML = `
+                    <div class="github-alert github-alert-danger">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        <strong>Error:</strong> ${error.message}
+                    </div>
+                `;
+            }
+        });
+
+        // Load saved credentials on page load
+        window.addEventListener('load', loadSavedCredentials);
+
+        // Add clear data button to footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const footer = document.querySelector('.github-footer .container');
+            const clearBtn = document.createElement('button');
+            clearBtn.className = 'github-btn';
+            clearBtn.style.cssText = 'width: auto; padding: 8px 16px; font-size: 12px; margin-top: 10px;';
+            clearBtn.innerHTML = '<i class="bi bi-trash"></i> Clear Saved Data';
+            clearBtn.onclick = clearSavedData;
+            footer.appendChild(clearBtn);
+        });
+    </script>
+</body>
+</html>
